@@ -1,9 +1,7 @@
-import './App.css';
-
 function App() {
   return (
     <div >
-      Hello World
+     Own It!
     </div>
   );
 }
