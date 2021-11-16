@@ -1,10 +1,19 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
 const cors = require('cors');
+const helmet = require("helmet")
+const morgan = require("morgan")
+const cookieParser = require("cookie-parser");
+const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
 
 
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(cors())
 //connecting to datatbase
 const PORT = process.env.PORT;
 const dbURI = process.env.MONGO_URI;
@@ -17,9 +26,15 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-  //middleware
+
   // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(cors())
+app.use(helmet());
+app.use(morgan("common"));
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+
+
+
+
