@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
-const userRoutes = require("./routes/userRoutes");
+
 
 //connecting to datatbase
 const PORT = process.env.PORT;
