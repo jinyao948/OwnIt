@@ -16,4 +16,13 @@ router.get('/:id',function(req,res,next){
     }).catch(next);
 });
 
+router.post("/", function (req, res) {
+    User.create(req.body, (error, createdMatch) => {
+        if (error) {
+            res.status(400).json({ error: error.message });
+        }
+        res.status(200).json(createdMatch);
+    });
+});
+
 module.exports = router;

@@ -5,7 +5,20 @@ export default function Landing() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target.email.value);
+        fetch("http://localhost:5001/api/users/",{
+          method: "POST",
+          body: JSON.stringify({
+            email: event.target.email.value
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => {
+            if (res.status === 200) {
+              console.log("Email has been saved")
+            }
+          })
     };
 
     return (
