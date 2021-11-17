@@ -1,4 +1,22 @@
 .landing {
-font-family: "Poppins", sans-serif !important;
-font-weight: 500;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 500;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    margin-botton: 0px
+}
+
+.subtitle {
+    margin-top: -20px;
+}
+
+.mailing-list {
+    margin-top: 15%;
 }
