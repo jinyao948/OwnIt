@@ -1,4 +1,5 @@
 import "antd/dist/antd.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Spin } from "antd";
 import React, { useState, useEffect } from "react";
@@ -7,13 +8,13 @@ import Navigation from "./components/nav/Navigation";
 
 export default function App() {
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(() => {
-        setLoading(false)
-    }, [])
+        setLoading(false);
+    }, []);
 
     return (
-        <>
+        <div className="main-body">
             {/* <Navigation /> */}
 
             <BrowserRouter>
@@ -27,6 +28,6 @@ export default function App() {
                     </Routes>
                 )}
             </BrowserRouter>
-        </>
+        </div>
     );
 }
