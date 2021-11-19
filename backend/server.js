@@ -7,6 +7,7 @@ const morgan = require("morgan")
 const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
+const path = require("path")
 
 
 const app = express();
@@ -34,6 +35,9 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+app.get("/*", (req, res) => {
+  res.sendFile(path.join("/app/client/build/", "index.html"));
+});
 
 
 

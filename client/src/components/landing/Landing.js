@@ -1,7 +1,7 @@
 import "./Landing.css";
 import React, { useState } from "react";
-import { Modal, Button } from "antd";
-import handyman from "../../assets/handyman.jpg";
+import { Modal } from "antd";
+// import handyman from "../../assets/handyman.jpg";
 
 export default function Landing() {
     const [isModalVisible, setIsModalVisible] = useState(false);
