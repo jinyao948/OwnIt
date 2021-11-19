@@ -36,7 +36,7 @@ app.use(morgan("common"));
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.get("/*", (req, res) => {
-  res.sendFile(path.join("../client/build", "index.html"));
+  res.sendFile(path.join("/app/client/build/", "index.html"));
 });
 
 
