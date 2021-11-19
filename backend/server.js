@@ -20,7 +20,8 @@ const PORT = process.env.PORT;
 const dbURI = process.env.MONGO_URI;
 console.log(dbURI);
 mongoose
-  .connect(dbURI, { useNewUrlParser: true })
+  .connect(dbURI, { useNewUrlParser: true, server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, })
   .then(() => {
     console.log("Mongodb connection established.");
     app.listen(PORT, () => console.log(`listening to port: ${PORT}`));
