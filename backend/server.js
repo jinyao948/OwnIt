@@ -7,6 +7,7 @@ const morgan = require("morgan")
 const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
+const path = require("path")
 
 
 const app = express();
